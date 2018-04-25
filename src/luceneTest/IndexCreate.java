@@ -13,7 +13,7 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;  
     
 public class IndexCreate {  
-  
+    
     public static void main(String[] args) {  
         //指定索引分词技术，这里使用的是标准分词  
         Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_43);  
@@ -35,7 +35,6 @@ public class IndexCreate {
         } catch (Exception e) {  
             e.printStackTrace();  
         }  
-          
         //创建文档一  
         Document doc1 = new Document();  
         //对name域赋值“测试标题”，存储域值信息  
@@ -48,7 +47,6 @@ public class IndexCreate {
         } catch (Exception e) {  
             e.printStackTrace();  
         }  
-          
         //创建文档二  
         Document doc2 = new Document();  
         doc2.add(new TextField("name", "基于lucene的案例开发：索引数学模型", Store.YES));  
@@ -58,8 +56,7 @@ public class IndexCreate {
             indexWrite.addDocument(doc2);  
         } catch (Exception e) {  
             e.printStackTrace();  
-        }  
-          
+        }
         //将indexWrite操作提交，如果不提交，之前的操作将不会保存到硬盘  
         try {  
             //这一步很消耗系统资源，所以commit操作需要有一定的策略  
