@@ -6,7 +6,9 @@ import org.junit.*;
 import org.junit.Test;
 
 public class CalculatorTest {
-
+	@Rule 
+	public MyRule mr = new MyRule(4);
+	
 	@Test
 	public void testAdd() {
 		Calculator c = new Calculator();
