@@ -42,4 +42,15 @@ public class CalculatorTest {
 	public static void testAfterClass(){
 		System.out.println("testAfterClass");
 	} 
+	
+	@Test(timeout=100)
+	public void testPara() {
+		while(true);
+	}
+	
+	@Test(expected=IndexOutOfBoundsException.class)
+	public void testpara2(){
+		String[] a =new String[4];
+		a[4]="123";
+	}
 }
